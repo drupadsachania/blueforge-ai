@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["tool_call"],
+  "properties": {
+    "tool_call": {
+      "type": "object",
+      "required": ["domain", "function", "parameters", "dry_run", "requires_approval"],
+      "properties": {
+        "domain": {"type": "string", "pattern": "^D[1-9]$"},
+        "function": {"type": "string"},
+        "parameters": {"type": "object"},
+        "dry_run": {"type": "boolean"},
+        "requires_approval": {"type": "boolean"}
+      }
+    }
+  }
+}

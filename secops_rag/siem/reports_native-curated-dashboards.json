@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/reports/native-curated-dashboards/",
+  "title": "Curated dashboards overview",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nCurated dashboards overview\nSupported in:\nGoogle secops\nSIEM\nGoogle SecOps offers curated dashboards—predefined dashboards designed\nfor visibility across various security use cases. While you cannot edit or delete\ncurated dashboards, you can create a copy and customize it to fit your needs.\nFor more information on how to create dashboards,\nsee\nManage dashboards\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:16:52.739193Z"
+}

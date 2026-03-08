@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/setting-time-zone-for-all-users-admin/",
+  "title": "Customize your time zone for all users",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nCustomize your time zone for all users\nSupported in:\nGoogle secops\nSOAR\nIn the\nLocalization\nsettings, administrators can set the default time\nzone and date/time format for all platform users. These changes take effect immediately after saving.\nWhile administrators can set the default time zone, individual users can\n  customize these settings to match their own preferences. For more information, see\nConfigure user preferences\n.\nTo customize these settings, follow these steps:\nGo to\nSettings\n>\nAdvanced\n>\nLocalization\n.\nSelect the time zone.\nSelect\nDate Format\nand\nTime Format\nto configure the date and time formats.\nClick\nSave\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:56:14.094816Z"
+}

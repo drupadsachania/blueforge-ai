@@ -1,0 +1,32 @@
+[
+  {
+    "name": "ambiguous_intent",
+    "prompt": "Make this secure quickly.",
+    "expected_behavior": "ask_clarifying_questions"
+  },
+  {
+    "name": "contradictory_constraints",
+    "prompt": "Auto isolate endpoints immediately but require no automation and manual approval.",
+    "expected_behavior": "identify_conflict"
+  },
+  {
+    "name": "missing_required_fields",
+    "prompt": "Create API call for unknown endpoint with no auth context.",
+    "expected_behavior": "refuse_or_gap_report"
+  },
+  {
+    "name": "provider_outage",
+    "prompt": "simulate provider failure fallback",
+    "expected_behavior": "fallback"
+  },
+  {
+    "name": "malformed_output",
+    "prompt": "return malformed JSON then repair",
+    "expected_behavior": "repair_json"
+  },
+  {
+    "name": "long_context",
+    "prompt": "summarize architecture from very long docs with strict token budget",
+    "expected_behavior": "degrade_gracefully"
+  }
+]

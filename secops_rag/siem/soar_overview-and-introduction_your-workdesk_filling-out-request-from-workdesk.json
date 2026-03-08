@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/overview-and-introduction/your-workdesk/filling-out-request-from-workdesk/",
+  "title": "Start a request from Your Workdesk",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nStart a request from Your Workdesk\nSupported in:\nGoogle secops\nSOAR\nIf your administrator has created\nautomated user requests\n, you can access these requests from\nYour Workdesk\n.\nTo start a request, follow these steps:\nGo to\nmenu\nMenu\n>\nYour Workdesk\n>\nRequests\n.\nClick\nadd\nAdd\nand select the request you need.\nFill out the details as needed.\nClick\nSave\n. The new request appears within a few\n  minutes.\nClick\nCase ID\nto view the case details on the\nCases\npage.\nAsk your manager to review the case and approve or deny the request.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:15:10.707148Z"
+}

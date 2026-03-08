@@ -1,0 +1,14 @@
+﻿# Python cache
+__pycache__/
+*.py[cod]
+
+# Local test cache
+.pytest_cache/
+
+# Runtime artifacts
+artifacts/factory.db
+artifacts/telemetry/
+artifacts/drive_pull/
+
+# Environment secrets
+.env

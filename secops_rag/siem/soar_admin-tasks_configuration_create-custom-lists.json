@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/configuration/create-custom-lists/",
+  "title": "Create custom lists",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nCreate custom lists\nSupported in:\nGoogle secops\nSOAR\nYou can create custom lists of special interest, for example, hosts holding\nconfidential information, or users who have come under suspicion. For example, you\ncan select custom lists as triggers for playbooks.\nTo create a custom list, you have two options:\nManually create a new list and add your items.\nDownload a template with sample data, add your information using the provided format, and then import it. This is especially useful for new customers who want to upload existing data to the platform.\nTo add\na new custom list, do the following:\nGo to\nSOAR Settings\n>\nEnvironments\n>\nCustom\nLists.\nClick\nadd\nAdd\n.\nEnter the relevant information into the\nAdd Custom List\ndialog and click\nAdd\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:55:55.045661Z"
+}

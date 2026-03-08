@@ -1,0 +1,88 @@
+﻿name: SOC Factory Automation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *'
+
+jobs:
+  daemon-once:
+    runs-on: ubuntu-latest
+    env:
+      FACTORY_DB_PATH: artifacts/factory.db
+      FACTORY_ARTIFACTS_ROOT: artifacts
+      FACTORY_CORPUS_ROOT: secops_rag
+      FACTORY_TASKS_FILE: tasks.sample.json
+      GOOGLE_DRIVE_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+      GOOGLE_DRIVE_CREDENTIALS_FILE: ${{ github.workspace }}/gdrive-service-account.json
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Materialize Drive credentials
+        if: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON != '' }}
+        run: |
+          echo '${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}' > gdrive-service-account.json
+
+      - name: Run automation cycle
+        run: |
+          python -m agentic_soc_factory.cli daemon-once \
+            --tasks "$FACTORY_TASKS_FILE" \
+            --corpus-root "$FACTORY_CORPUS_ROOT" \
+            --db "$FACTORY_DB_PATH" \
+            --artifacts-root "$FACTORY_ARTIFACTS_ROOT" \
+            --profile default
+
+      - name: Poll telemetry and snapshot status
+        run: |
+          python - <<'PY'
+          import sqlite3
+          from pathlib import Path
+          db = Path('artifacts/factory.db')
+          if not db.exists():
+              raise SystemExit('factory.db missing')
+          conn = sqlite3.connect(db)
+          row = conn.execute("SELECT run_id,status FROM runs ORDER BY created_at DESC LIMIT 1").fetchone()
+          if row:
+              print({'run_id': row[0], 'status': row[1]})
+              telem = conn.execute("SELECT run_id,phase,step,loss,gpu_minutes,status,heartbeat_at FROM training_telemetry WHERE run_id=? ORDER BY heartbeat_at DESC LIMIT 1", (row[0],)).fetchone()
+              if telem:
+                  print({'telemetry': {'run_id': telem[0], 'phase': telem[1], 'step': telem[2], 'loss': telem[3], 'gpu_minutes': telem[4], 'status': telem[5], 'timestamp': telem[6]}})
+          conn.close()
+          PY
+
+      - name: Download latest run artifacts from Drive (optional)
+        if: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID != '' }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          import gdown
+
+          folder_id = os.getenv('GOOGLE_DRIVE_FOLDER_ID', '').strip()
+          if not folder_id:
+              raise SystemExit(0)
+
+          out = Path('artifacts/drive_pull')
+          out.mkdir(parents=True, exist_ok=True)
+          gdown.download_folder(id=folder_id, output=str(out), quiet=False, use_cookies=False, remaining_ok=True)
+          PY
+
+      - name: Upload reports and artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: soc-factory-artifacts
+          path: |
+            artifacts/**
+            !artifacts/**/*.tmp

@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/reports/understand-bigquery-data-schema/",
+  "title": "Understand BigQuery data schema",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nUnderstand BigQuery data schema\nSupported in:\nGoogle secops\nSIEM\nThe BigQuery data schema defines how Google Security Operations exports\nnormalized and contextualized security data into BigQuery. Each linked\ndataset corresponds to a different data type, such as UDM events, rule detections,\nIoC matches, entity relationships, and ingestion metrics. These datasets provide\na structural view of your exported data, letting you query, join, and analyze\nsecurity information.\nThe following topics describe the available schemas, their field definitions, and\nhow they map to data exported by Google SecOps:\nIngestion metrics schema\nUDM events schema\nGoogle SecOps events schema\nView alerts and IoCs\nEnrich event and entity data with Google SecOps\nIngestion metrics reference for Looker and BigQuery\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:17:19.655527Z"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/define-system-data-retention/",
+  "title": "Define data retention on closed cases",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nDefine data retention on closed cases\nSupported in:\nGoogle secops\nSOAR\nYou can define the retention period for information about closed cases. You\ncan set the period either for all environments or individually. The retention time period starts from when the case or cases were closed.\nYour customer license defines the maximum retention timeframe. To extend it, contact\nGoogle SecOps Support\n.\nTo configure data retention, follow these steps:\nGo to\nSettings\n>\nAdvanced\n>\nGeneral\n.\nSelect the time period. The default period is 12 months.\nOptional: Select\nAllow Data Retention Period per Environment\n.\nClick\nSave\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:56:09.584830Z"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/overview-and-introduction/soar-gradual-release/",
+  "title": "Release plan for Google SecOps",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nRelease plan for Google SecOps\nSupported in:\nGoogle secops\nSOAR\nThis document explains how Google SecOps SOAR \nreleases are deployed across regions.\nReleases typically follow a two-stage rollout, with updates occurring on \nSundays. The second-stage regions are upgraded one week after the first-stage \nregions.\nFirst-stage regions\nJapan\nIndia\nAustralia\nCanada\nGermany\nSwitzerland\nSecond-stage regions\nSingapore\nQatar\nSaudi Arabia\nIsrael\nUK (London)\nItaly\nEU (multi-region)\nUS (multi-region)\nIf you're unsure of your assigned region, contact your \n  Google SecOps representative.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:54:38.223554Z"
+}

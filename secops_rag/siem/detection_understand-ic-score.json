@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/detection/understand-ic-score/",
+  "title": "Google Threat Intelligence (GTI) score overview",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nGoogle Threat Intelligence (GTI) score overview\nSupported in:\nGoogle secops\nSIEM\nThe Google Threat Intelligence (GTI) score system helps Google Security Operations \nprioritize and address the most significant security threats. GTI score calculates \nthreat levels for various indicators, including, domains, IP addresses, file hashes and URLs.\nThe GTI score is a numeric representation (from 0-100) of an indicator's potential\nimpact if detected in an environment. The scoring system combines Mandiant\nThreat Intelligence data with analyst expertise\nto determine the score.\nFor more details about GTI score, see\nGoogle Threat Intelligence Indicatore Score\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:13:42.738626Z"
+}

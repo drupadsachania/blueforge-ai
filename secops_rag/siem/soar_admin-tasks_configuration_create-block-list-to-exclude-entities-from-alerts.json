@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/configuration/create-block-list-to-exclude-entities-from-alerts/",
+  "title": "Create a blocklist to exclude entities from alerts",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nCreate a blocklist to exclude entities from alerts\nSupported in:\nGoogle secops\nSOAR\nYou can create a blocklist of items to prevent the system from grouping\nalerts by specific entities, or to exclude entities from being displayed in the system.\nAdd a new blocklist item\nTo add a new blocklist item, follow these steps:\nGo to\nSOAR Settings\n>\nEnvironments\n>\nBlocklist\n.\nClick\nadd\nAdd Blocklist\n.\nEnter the\nEntity Identifier\n.\nSelect the\nEntity Type\n.\nChoose the appropriate\nAction\n:\nDo not group alerts\n: The entity won't be used to group \n          alerts. Alerts containing this entity remain visible.\nDo not create entity\n: The system doesn't create or process \n          this entity.\nChoose the relevant\nEnvironment\n.\nClick\nAdd\n.\nFor more information about how grouped alerts are managed, see\nConfigure alert grouping\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:55:53.413488Z"
+}

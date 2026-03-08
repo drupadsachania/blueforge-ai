@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/move-case-to-a-new-environment/",
+  "title": "Move a case to a new environment",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nMove a case to a new environment\nSupported in:\nGoogle secops\nSOAR\nThis document explains how to move a case from one environment to another, or duplicate it\nacross environments. This is useful if your organization uses multiple environments and you need to transfer or share cases between them.\nTo move or duplicate a case to another environment, follow these steps:\nGo to the\nCases\npage.\nOpen the case you want to move.\nIn the case view, click\nEnvironment\nand then select the target environment.\nIn the\nNew Environment\ndialog, select one of the following options:\nConfirm\n: Creates a copy of the case in the selected environment. The new case has a different case ID.\nClose current case\n(checkbox)\n>\nConfirm\n: Closes the case in the current environment and creates a new case with a different case ID in the selected environment.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:14:53.491756Z"
+}

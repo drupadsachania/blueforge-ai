@@ -1,0 +1,23 @@
+[
+  {
+    "id": "t1",
+    "text": "Extract core ingestion and parser architecture from Chronicle docs and return structured summary.",
+    "workload": "cheap_extraction",
+    "token_estimate": 1200,
+    "reasoning_hops": 1
+  },
+  {
+    "id": "t2",
+    "text": "Design multi-domain detection and response chain for phishing to endpoint compromise.",
+    "workload": "deep_reasoning/planning",
+    "token_estimate": 4600,
+    "reasoning_hops": 3
+  },
+  {
+    "id": "t3",
+    "text": "Repair malformed JSON tool output and enforce schema compliance.",
+    "workload": "format_repair/guardrails",
+    "token_estimate": 900,
+    "reasoning_hops": 1
+  }
+]

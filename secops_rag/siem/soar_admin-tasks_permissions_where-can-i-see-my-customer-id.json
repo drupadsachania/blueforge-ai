@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/permissions/where-can-i-see-my-customer-id/",
+  "title": "Locate your customer ID",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nLocate your customer ID\nSupported in:\nGoogle secops\nSOAR\nFinding your Google Security Operations customer ID is essential for performing administrative tasks and managing permissions within your Google Security Operations SOAR account.\nTo find your customer ID, go to\nSOAR Settings\n>\nOrganization\n>\nLicense Management\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:55:44.385206Z"
+}

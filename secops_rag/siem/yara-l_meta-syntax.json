@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/meta-syntax/",
+  "title": "Meta section syntax",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nMeta section syntax\nSupported in:\nGoogle secops\nSIEM\nThe\nmeta\nsection of a YARA-L rule is required and must appear at the start of the query.\nThis section can include multiple lines, where each line defines a key-value pair. The\nkey\nis a string value without quotes, and the\nvalue\nis a string with quotes, such as:\n<key> = \"<value>\"\nFor example:\nrule failed_logins_from_new_location {\n  meta:\n   author = \"Security Team\"\n   description = \"Detects multiple failed logins for a user from a new, never-before-seen IP address within 10 minutes.\"\n   severity = \"HIGH\"\n\n  ... rest of the rule ...\n}\nWhat's next\nEvents section syntax\nMatch section syntax\nOutcome section syntax\nCondition section syntax\nOptions section syntax\nAdditional information\nExpressions, operators, and constructs used in YARA-L 2.0\nFunctions in YARA-L 2.0\nBuild composite detection rules\nExamples: YARA-L 2.0 queries\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:13:51.834618Z"
+}

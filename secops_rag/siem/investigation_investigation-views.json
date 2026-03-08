@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/investigation/investigation-views/",
+  "title": "Investigation views",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nInvestigation views\nSupported in:\nGoogle secops\nSIEM\nGoogle Security Operations lets you investigate many different aspects of the\ninformation stored in your Google SecOps account using the investigation\nviews:\nAlert view\nAsset view\nDomain view\nFile view\nIP address view\nUppercase alert view\nUser view\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:13:16.530331Z"
+}

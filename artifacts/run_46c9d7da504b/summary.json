@@ -1,0 +1,39 @@
+{
+  "run_id": "run_46c9d7da504b",
+  "docs_count": 2094,
+  "reasoning_units": 1,
+  "dataset_paths": {
+    "train": "artifacts\\run_46c9d7da504b\\dataset\\train.jsonl",
+    "val": "artifacts\\run_46c9d7da504b\\dataset\\val.jsonl",
+    "test": "artifacts\\run_46c9d7da504b\\dataset\\test.jsonl"
+  },
+  "quality": {
+    "schema_errors": 0
+  },
+  "model_calls": 3,
+  "execute_stub": {
+    "total": 3,
+    "success": 3,
+    "success_rate": 1.0,
+    "failed": 0
+  },
+  "eval": {
+    "metrics": {
+      "json_validity": 1.0,
+      "refusal_compliance": 0.96,
+      "chain_correctness": 0.91,
+      "gap_quality": 0.92,
+      "functional_accuracy": 0.9
+    },
+    "gate": {
+      "passed": true,
+      "checks": {
+        "json_validity": true,
+        "refusal_compliance": true,
+        "chain_correctness": true
+      }
+    }
+  },
+  "leakage_overlap": 0.0,
+  "artifacts_root": "artifacts\\run_46c9d7da504b"
+}

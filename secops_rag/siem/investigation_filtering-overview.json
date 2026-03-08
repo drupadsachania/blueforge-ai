@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/investigation/filtering-overview/",
+  "title": "Overview of procedural filtering",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nOverview of procedural filtering\nSupported in:\nGoogle secops\nSIEM\nProcedural Filtering enables you to further filter information pertaining to an asset, including by event type, log source, network connection status, and Top Level Domain (TLD). The Procedural Filtering menu options change depending on the Google Security Operations view and the breadth and types of security data currently displayed in the UI.\nThis describes how to access and use Procedural Filtering when investigating an alert using Google SecOps for the following views:\nUser view\nRule Detections view\nAsset view\nDomain view\nIP Address view\nHash view\nRaw Log Scan view\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:13:26.745021Z"
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/working-with-remote-agents/remote-agents-architecture-overview/",
+  "title": "Remote Agent architecture overview",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nRemote Agent architecture overview\nSupported in:\nGoogle secops\nSOAR\nThe\nRemote Agent\nis a lightweight application installed on a customer's\n  remote environment. It connects to the Google Security Operations platform, giving\n  your security team access to execute actions and playbooks on the remote environment.\nThe agent communicates with Google SecOps through the\n     Publisher, a managed proxy server. This\n     connection automatically syncs the agent with Google SecOps\n     platform, fetching and executing tasks from configured connectors and integrations.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:16:23.042907Z"
+}

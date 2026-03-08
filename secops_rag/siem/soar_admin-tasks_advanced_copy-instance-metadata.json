@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/copy-instance-metadata/",
+  "title": "Allow Support to troubleshoot SOAR functionality",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nAllow Support to troubleshoot SOAR functionality\nSupported in:\nGoogle secops\nSOAR\nYou can authorize Google Support to replicate your instance's runtime configuration to troubleshoot SOAR functionality issues without requiring a live screen-share session.\nTo provide the necessary instance data, do the following:\nGo to the question mark icon at the top of the platform.\nSelect\nCopy Instance Metadata\n.\nSend the resulting JSON file to your Support representative.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:55:50.825905Z"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["gap_report"],
+  "properties": {
+    "gap_report": {
+      "type": "object",
+      "required": ["missing_inputs"],
+      "properties": {
+        "missing_inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["field", "question"],
+            "properties": {
+              "field": {"type": "string"},
+              "question": {"type": "string"},
+              "domain": {"type": "string"}
+            }
+          }
+        },
+        "confidence": {"type": "number"}
+      }
+    }
+  }
+}

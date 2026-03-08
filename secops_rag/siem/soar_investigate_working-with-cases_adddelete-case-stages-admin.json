@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/adddelete-case-stages-admin/",
+  "title": "Add or delete case stages",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nAdd or delete case stages\nSupported in:\nGoogle secops\nSOAR\nThis document explains how to customize case stages to match your organization's case \nmanagement stages.\nAdd a new case stage\nTo add a new case stage, follow these steps:\nGo to\nSOAR Settings\n>\nCase Data\n>\nCase \nstages\n.\nClick\nadd\nAdd Stage\n.\nIn the\nAdd Case Stage\ndialog, enter the relevant information for the new case stage.\nClick\nCreate\n.\nDelete a case stage\nTo delete a case stage, do the following:\nGo to\nSOAR Settings\n>\nCase Data\n>\nCase \nStages\n.\nSelect the case stage you want to delete.\nClick\nedit\nEdit Stage\n(or double-click the case stage) to open the\nEdit Case Stage\ndialog.\nIn the\nEdit Case Stage\ndialog, click\ndelete\nDelete\n.\nIn the\nConfirmation\ndialog, click\nYes\nto remove the case \nstage.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:14:40.325170Z"
+}

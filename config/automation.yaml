@@ -1,0 +1,47 @@
+﻿{
+  "automation": {
+    "timezone": "Asia/Kolkata",
+    "schedule": {
+      "hour": 10,
+      "minute": 0
+    },
+    "concurrency_policy": "skip",
+    "lock_file": "artifacts/factory.lock",
+    "retry": {
+      "attempts": 3,
+      "backoff_seconds": 20
+    },
+    "monitor": {
+      "poll_interval_seconds": 60,
+      "stale_heartbeat_seconds": 900,
+      "max_wait_minutes": 360
+    }
+  },
+  "notifier": {
+    "webhook": {
+      "enabled": true,
+      "url": "",
+      "timeout_seconds": 10
+    },
+    "email": {
+      "enabled": true,
+      "milestone_only": true
+    }
+  },
+  "telemetry": {
+    "drive": {
+      "enabled": true,
+      "folder_id": "",
+      "file_name_pattern": "{run_id}_telemetry.json"
+    },
+    "local_fallback": {
+      "enabled": true,
+      "folder": "artifacts/telemetry"
+    }
+  },
+  "event_api": {
+    "host": "0.0.0.0",
+    "port": 8787,
+    "require_signature": false
+  }
+}

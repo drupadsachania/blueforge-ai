@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/rebranding/",
+  "title": "Rebrand the platform",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nRebrand the platform\nSupported in:\nGoogle secops\nSOAR\nYou can design the platform to reflect your company's branding in several ways.\nTo use the features to customize your platform, contact\nGoogle SecOps Support\n.\nReplace a logo\nTo replace a logo, follow these steps:\nGo to\nSOAR Settings\n>\nOrganization\n>\nRebranding.\nChoose where to replace the logo with yours:\nHeader\n: Your logo replaces the Google SecOps logo. The Google SecOps logo remains on the other side at the top of your page.\nSOAR Reports\n: Your logo replaces the Google SecOps logo in the\n  report header. The report footer displays\nPowered by Google SecOps\n.\nBrowse and attach your logo.\nClick\nApply\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:56:12.632380Z"
+}

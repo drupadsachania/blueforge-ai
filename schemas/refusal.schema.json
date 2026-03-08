@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["documentation_required"],
+  "properties": {
+    "documentation_required": {
+      "type": "object",
+      "required": ["field", "reason"],
+      "properties": {
+        "field": {"type": "string"},
+        "reason": {"type": "string"},
+        "action": {"type": "string"}
+      }
+    }
+  }
+}

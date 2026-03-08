@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/working-with-remote-agents/redeploy-connectors-remote-agents/",
+  "title": "Redeploy connectors",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nRedeploy connectors\nSupported in:\nGoogle secops\nSOAR\nWhen you redeploy connectors, the connector's scheduler moves from the Remote Agent\nto the Google Security Operations server. You can manually redeploy connectors\nfor each Remote Agent.\nThe connector redeployment process is connected to the\nRemote Agent's high availability\nfeature. During redeployment, the system validates each connector. If it detects\nany issues, it automatically reverts all changes and restores the connector to its\nprevious working state.\nThe redeployment process may take some time. You can track its completion on the\nRemote Agent\npage. If you get an error message, repeat the redeployment process.\nIf you continue to get an error, contact\nGoogle Support\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:16:48.214763Z"
+}

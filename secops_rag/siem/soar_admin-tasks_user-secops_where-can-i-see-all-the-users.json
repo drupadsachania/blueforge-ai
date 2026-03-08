@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/where-can-i-see-all-the-users/",
+  "title": "View all users in Google SecOps",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nView all users in Google SecOps\nSupported in:\nGoogle secops\nSOAR\nAfter you've completed mapping all the users on the\nGroups Mapping\npage, \nyou can view each individual Google Security Operations user's details. This includes\ntheir assigned SOC role, permission group, environment, and license type.\nThis information is available in\nSettings\n>\nSOAR Settings\n>\nOrganization\n>\nUser Management\n. You can also delete\nusers on the\nGroups Mapping\npage.\nFor customers who use Workforce Identity Federation, see\nMap users in the \nGoogle SecOps platform using Identity Providers (IdPs)\n.\n\nFor customers who use Cloud Identity, see\nMap users in the Google SecOps \nplatform using Cloud Identity\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:55:27.880388Z"
+}

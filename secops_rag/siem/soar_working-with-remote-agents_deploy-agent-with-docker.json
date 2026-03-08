@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/working-with-remote-agents/deploy-agent-with-docker/",
+  "title": "Create an agent using Docker",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nCreate an agent using Docker\nSupported in:\nGoogle secops\nSOAR\nThis document outlines the procedure to deploy a Remote Agent using the platform's\nDocker installation wizard. This method automates the container setup process on\nthe host machine.\nIn the Google Security Operations platform, go to\nSOAR Settings\n>\nAdvanced\n>\nRemote Agents\n.\nOn the\nRemote Agents\npage, click\nadd\nAdd\n>\nDocker installation\n.\nIn the\nName\nfield, enter an agent name.\nSelect an environment for the agent.\nFollow all steps in the wizard to complete the deployment.\nClick\nNext\nto perform a connectivity check with your new agent. If the check is successful, the agent is added. If the check fails, a prompt appears with helpful links on how to troubleshoot the issue.\nClick\nDone\n. The agent is now added.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:16:26.382018Z"
+}

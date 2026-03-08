@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/version-rollback/",
+  "title": "Roll back response integration version",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nRoll back response integration version\nSupported in:\nGoogle secops\nSOAR\nThis document explains how to roll back response integrations to a previously\ninstalled version. This is useful if a new version introduces unexpected\nbehavior or if you need to revert custom code changes.\nRoll back to a previous version\nTo roll back to a previously installed version, follow these steps:\nGo to\nContent Hub\nand click the\nResponse Integrations\ntab.\nSelect the required response integration.\nClick\nDetails\n.\nIn the side drawer, click the\nVersions\ntab.\nLocate the\nLast Installed\nsection and click\nRollback\n.\nIn the confirmation dialog, click\nConfirm\n.\nChoose whether to override the existing ontology. For more information \n    on managing ontologies, see\nOntology override\n.\nClick\nConfirm\n. The system uninstalls the current\n    version and restores the previous version.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:15:57.442252Z"
+}

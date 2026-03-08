@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/view-the-original-siem-data-in-a-case/",
+  "title": "View the original SIEM data in a case",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nView the original SIEM data in a case\nSupported in:\nGoogle secops\nSOAR\nBefore diving into analysis or remediation, this document explains how you\ncan review the original SIEM data that triggered a case. This includes both\nhigh-level alert context and the underlying event details.\nAccess the original SIEM data in a case\nTo access the original SIEM data associated with a case, follow these steps:\nGo to the required case.\nClick the\nOverview\ntab. The\nOverview\ntab displays the \n  alerts, timeline, extracted entities, and insights that were collected \n  by automation.\nView the original event that triggered the alerts\nTo view the original event that triggered the alerts, follow these steps:\nGo to the\nEvents\ntab.\nClick\nView More\n. A side drawer opens with all the details associated \n  with the event.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:14:42.396971Z"
+}

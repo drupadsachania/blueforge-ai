@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/rerun-playbooks/",
+  "title": "Rerun playbooks",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nRerun playbooks\nSupported in:\nGoogle secops\nSOAR\nThis document describes how to rerun a playbook associated with a case alert. This feature allows for up to nine reruns (10 total runs, including the initial execution) per alert.\nThis feature can be useful in the following situations:\nData freshness\n: Obtain more up-to-date results after the initial run.\nError recovery\n: Rerun the entire playbook following one or more failed steps.\nLogic updates\n: Run the playbook with new logic after making changes on the\nPlaybooks\npage.\nTo rerun a playbook, follow these steps:\nOn the\nCases\npage, go to the\nPlaybooks\ntab of the selected alert.\nLocate the playbook you want to rerun.\nClick\nreplay\nRerun Playbook\n.\nEach time you rerun the playbook, the system updates the iteration number and writes informative messages to the case wall.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:15:06.777103Z"
+}

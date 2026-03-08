@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/investigation/filter-data-domain-view/",
+  "title": "Filter data in Domain view",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nFilter data in Domain view\nSupported in:\nGoogle secops\nSIEM\nDomain view lets you investigate whether or not specific domains are\npresent within your enterprise and what impact they might have had on your\nassets.\nTo access Domain view in Google Security Operations, complete the following steps:\nEnter the domain (ending with a known public suffix) or URL you need to\ninvestigate in the search bar. Click\nSEARCH\n.\nSelect the domain from the\nDOMAINS\nmenu. Domain view is displayed.\nClick the\nicon in the top right corner of the Google SecOps user interface to open the\nProcedural Filtering\nmenu. Procedural\nFiltering lets you further filter information pertaining to an asset,\nincluding by event type, log source, network connection status, and Top\nLevel Domain (TLD).\nThe following\nProcedural Filtering\noptions are available in Domain view:\nASSETS\nEVENT TYPE\nLOG SOURCE\nNETWORK CONNECTION STATUS\nTLD\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:13:30.972389Z"
+}

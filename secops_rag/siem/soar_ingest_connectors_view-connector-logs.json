@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/ingest/connectors/view-connector-logs/",
+  "title": "View connector logs",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nView connector logs\nSupported in:\nGoogle secops\nSOAR\nConnector logs help you identify and troubleshoot potential issues with\ncustom or commercial connectors.\nTo view connector logs, follow these steps:\nGo to\nSOAR Settings\n>\nIngestion\n>\nConnectors\n.\nSelect the relevant connector and click the\nLogs\ntab.\nClick the\nEnable Log Collection\ntoggle to on and select the required level\nfrom the\nLog level\nmenu.\nClick\nautorenew\nRefresh\nto display the newly collected logs on the page.\nAfter three hours, the\nEnable Log Collection\ntoggle turns off automatically, and \nthe timer stops. You can choose to disable it manually at any time. The\nlogs remain visible on the page until the next time you enable log collection.\nEach log entry has an icon that identifies the issue with a short description.\nClick\nView More\nto see the full log details.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:11:18.834060Z"
+}

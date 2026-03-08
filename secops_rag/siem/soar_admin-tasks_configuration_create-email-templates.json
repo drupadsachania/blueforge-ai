@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/configuration/create-email-templates/",
+  "title": "Create email templates",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nCreate email templates\nSupported in:\nGoogle secops\nSOAR\nYou can define templates for recurring emails, so that they can be sent by\n  scripts and can also be sent automatically with playbooks.\nTo create a new email template, follow these steps:\nGo to\nSettings\n>\nEnvironments\n>\nEmail templates\n.\nClick\nadd\nAdd\n.\nIn the\nAdd Email Template\ndialog, enter the email message, name, and environment.\nClick\nAdd\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T12:55:57.900650Z"
+}

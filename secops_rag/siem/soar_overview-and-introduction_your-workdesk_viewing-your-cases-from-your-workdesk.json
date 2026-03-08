@@ -1,0 +1,6 @@
+{
+  "url": "https://docs.cloud.google.com/chronicle/docs/soar/overview-and-introduction/your-workdesk/viewing-your-cases-from-your-workdesk/",
+  "title": "View cases from Your Workdesk",
+  "content": "Home\nDocumentation\nSecurity\nGoogle Security Operations\nGuides\nStay organized with collections\nSave and categorize content based on your preferences.\nView cases from Your Workdesk\nSupported in:\nGoogle secops\nSOAR\nIn\nYour Workdesk\n, the\nMy Cases\ntab contains cases assigned to you,\nyour role, or cases where you're mentioned.\nView case details\nTo view more details about a specific case, click\nView Details\nnext to \nthe case. This opens the\nView Details\nside drawer, which displays \nadditional case details, including the highlighted information. If you need \nfurther details or want to configure a service-level agreement (SLA), \nclick\nGo to case\n.\nAccess SLAs for alerts\nTo view SLAs for alerts for a specific case, hold the pointer over\nSLA for Alerts\n.\nNeed more help?\nGet answers from Community members and Google SecOps professionals.",
+  "scraped_at": "2026-03-07T13:15:12.978751Z"
+}
