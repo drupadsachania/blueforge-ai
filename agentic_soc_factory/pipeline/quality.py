@@ -78,11 +78,29 @@ def _validate_record(value: Any, schema: Dict[str, Any], path: str, errors: List
                 _validate_record(item, item_schema, f"{path}[{idx}]", errors)
 
 
+def _extract_validation_target(record: Dict[str, Any]) -> Any:
+    """If record is ChatML, validate assistant JSON body; else validate record directly."""
+    messages = record.get("messages")
+    if not isinstance(messages, list):
+        return record
+
+    for msg in reversed(messages):
+        if isinstance(msg, dict) and msg.get("role") == "assistant":
+            content = msg.get("content")
+            if isinstance(content, str):
+                try:
+                    return json.loads(content)
+                except json.JSONDecodeError:
+                    return content
+    return record
+
+
 def validate_against_schema(records: List[Dict], schema_path: Path) -> List[str]:
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
     errors: List[str] = []
     for i, record in enumerate(records):
-        _validate_record(record, schema, f"record[{i}]", errors)
+        value = _extract_validation_target(record)
+        _validate_record(value, schema, f"record[{i}]", errors)
     return errors
 
 

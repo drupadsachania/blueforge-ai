@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["id", "tag", "messages", "metadata"],
+  "properties": {
+    "id": {"type": "string"},
+    "tag": {"type": "string", "enum": ["single_domain", "multi_domain_chain", "gap_analysis", "refusal", "edge_case"]},
+    "messages": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["role", "content"],
+        "properties": {
+          "role": {"type": "string"},
+          "content": {"type": "string"}
+        }
+      }
+    },
+    "metadata": {"type": "object"}
+  }
+}
