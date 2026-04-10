@@ -1,14 +1,26 @@
-﻿# Python cache
+# Python cache
 __pycache__/
 *.py[cod]
 
 # Local test cache
 .pytest_cache/
 
-# Runtime artifacts
-artifacts/factory.db
-artifacts/telemetry/
-artifacts/drive_pull/
-
 # Environment secrets
 .env
+.env.*
+
+# Specialized Secrets (Ignored from public repo)
+secrets/
+*.json
+!schemas/*.json
+!tasks.sample.json
+!agent.yaml
+!*.schema.json
+*.pem
+*.key
+*.p12
+*.bak
+
+# Runtime artifacts
+artifacts/
+!artifacts/.gitkeep

@@ -6,8 +6,10 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 from googleapiclient.http import MediaFileUpload
 
+from agentic_soc_factory.config import get_gdrive_creds
+
 class GDriveSyncClient:
-    def __init__(self, service_account_json: str):
+    def __init__(self, service_account_json: Optional[str] = None):
         self.service_account_json = service_account_json
         self._creds = None
         self._service = None
@@ -15,10 +17,12 @@ class GDriveSyncClient:
     @property
     def service(self):
         if self._service is None:
-            if not os.path.exists(self.service_account_json):
+            creds_data = get_gdrive_creds()
+            if not creds_data:
                 return None
-            self._creds = service_account.Credentials.from_service_account_file(
-                self.service_account_json,
+            
+            self._creds = service_account.Credentials.from_service_account_info(
+                creds_data,
                 scopes=['https://www.googleapis.com/auth/drive.file']
             )
             self._service = build('drive', 'v3', credentials=self._creds)
