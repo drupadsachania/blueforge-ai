@@ -1,163 +1,101 @@
-﻿# Detection Engineering LLM Factory
+# BlueForge AI: Agentic SOC LLM Factory (Gemma 4 Edition)
 
-This repository implements a cloud-native, semi-automated pipeline that continuously converts SOC detection engineering documentation into evaluated LLM artifacts.
+BlueForge AI is a cloud-native, semi-automated pipeline designed to continuously transform raw SOC documentation into fine-tuned, evaluated LLM artifacts. Now optimized for **Gemma 4 (E2B/E4B)**, the platform prioritizes a "Training-First" strategy with robust, self-healing telemetry.
 
-## Architecture
+---
 
-Pipeline stages:
+## 🏗️ Core Architecture: The Gemma Swarm
 
-1. SOC document ingestion
-2. reasoning distillation
-3. dataset construction + quality gates
-4. automation supervisor
-5. routed LLM provider calls
-6. scheduled training jobs
-7. telemetry + event tracking
-8. evaluation harness
-9. model export (GGUF/Ollama)
-10. dashboard monitoring
+The factory operates as an agentic swarm, where specialized models collaborate to refine security data into high-quality training sets.
 
-Core flow:
-
-`secops_rag -> pipeline -> supervisor -> routing/providers -> automation daemon -> Colab training -> drive telemetry/events -> evaluation -> GGUF export -> Streamlit dashboard`
-
-## Repository Layout
-
-```text
-agentic_soc_factory/
-  agents/
-  automation/
-  evaluation/
-  export/
-  pipeline/
-  reporting/
-  routing/
-  cli.py
-
-dashboard/
-  app.py
-
-colab/
-  qwen35_4b_qlora_free_colab.ipynb
-
-config/
-  automation.yaml
-  routing.yaml
-  providers.yaml
-
-secops_rag/
-artifacts/
-schemas/
-tests/
+```mermaid
+graph TD
+    A[Raw Docs: Splunk, Sentinel, Sigma] --> B[Web Scraper Ingestion]
+    B --> C[ThreatHunter Agent]
+    C --> D[PlatformTranslator Agent]
+    D --> E[GapAnalysis Agent]
+    E --> F[DatasetBuilder]
+    F --> G[SelfHealing Telemetry]
+    G --> H[Gemma 4 Training Pipeline]
+    H --> I[GGUF/Ollama Export]
 ```
 
-## Cloud Setup
+### Specialized Swarm Agents
+- **🕵️ ThreatHunter:** Extracts indicators (IPs, domains) and behavioral patterns from raw security documentation.
+- **🌍 PlatformTranslator:** Translates detection logic between SIEM/SOAR platforms (e.g., SPL to KQL, Sigma to Sentinel).
+- **📉 GapAnalysis:** Identifies missing telemetry links and correlation windows in existing detections.
+- **🛡️ SelfHealing:** Monitors pipeline health and autonomously repairs dataset drift or schema mismatches.
 
-### 1) Install dependencies
+---
 
+## 🚀 Training-First Strategy: Colab MCP Bridge
+
+The training pipeline is decoupled from the ingestion factory, allowing for remote, GPU-accelerated fine-tuning via Google Colab.
+
+```mermaid
+sequenceDiagram
+    participant Factory as Local Factory
+    participant GDrive as Google Drive (MCP)
+    participant Colab as Google Colab (GPU)
+    participant GitHub as GitHub Pages (Status)
+
+    Factory->>GDrive: Upload train.jsonl & val.jsonl
+    Factory->>GDrive: Trigger START_TRAINING
+    Colab->>GDrive: Read Dataset
+    loop Training
+        Colab->>GDrive: Write Heartbeat (Loss, GPU %)
+        GDrive->>Factory: Sync Telemetry
+        Factory->>GitHub: Push Static Dashboard JSON
+    end
+    Colab->>GDrive: Export GGUF Weights
+    GDrive->>Factory: Download Final Artifacts
+```
+
+---
+
+## 📊 Self-Healing Telemetry & Dashboard
+
+The platform monitors its own data integrity to prevent model "poisoning" or performance drift.
+
+- **PipelineHealthCheck:** Baselines dataset size and enforces strict schema compliance.
+- **SignalDriftDetector:** Uses Jaccard-based content analysis to identify significant shifts in security telemetry (e.g., shifting from "Auth" logs to "Cloud" logs).
+- **Real-time Dashboard:** A Streamlit-based console featuring loss curves, GPU utilization, and pipeline health scores.
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2) Configure environment
+### 2. Configure Environment
+Copy `.env.example` to `.env` and set your provider credentials (OpenAI, Anthropic, Gemini) and Google Drive API keys.
 
-Copy `.env.example` to `.env` and set provider credentials, SMTP settings, and optional Google Drive values.
-
-### 3) Stable CLI entrypoint
-
+### 3. Run the Factory
 ```bash
-python -m agentic_soc_factory.cli <command>
+# Run a single automation cycle
+python -m agentic_soc_factory.cli daemon-once
+
+# Start the Streamlit Dashboard
+streamlit run dashboard/app.py
 ```
 
-Supported commands:
+---
 
-- `supervisor`
-- `daemon`
-- `daemon-once`
-- `event-api`
-- `export`
+## 📁 Repository Layout
 
-### 4) SQLite run state
+- `agentic_soc_factory/`: Core logic and agent swarm implementation.
+  - `ingestion/`: Platform-agnostic scrapers (Sigma, Splunk, Sentinel).
+  - `telemetry/`: Self-healing health and drift monitoring.
+  - `training/`: Google Drive / MCP bridge for Colab.
+- `dashboard/`: Streamlit monitoring app.
+- `docs/superpowers/specs/`: Detailed design and architecture documents.
+- `secops_rag/`: Local storage for security documentation.
+- `artifacts/`: SQLite database (`factory.db`) and local dataset exports.
 
-Database path: `artifacts/factory.db`
+---
 
-Required tables are created on startup:
-
-- `jobs`
-- `events`
-- `notifications`
-- `training_telemetry`
-
-### 5) Colab training + telemetry contract
-
-Notebook: `colab/qwen35_4b_qlora_free_colab.ipynb`
-
-Telemetry file format:
-
-`{run_id}_telemetry.json`
-
-Required fields:
-
-- `run_id`
-- `phase`
-- `step`
-- `loss`
-- `gpu_minutes`
-- `status`
-- `timestamp`
-- `artifact`
-
-Automation lifecycle states:
-
-`queued -> running -> waiting_colab -> training -> export -> eval -> completed/failed`
-
-## GitHub Actions Automation
-
-Workflow: `.github/workflows/automation.yml`
-
-What it does daily:
-
-1. installs dependencies
-2. runs `daemon-once`
-3. polls telemetry/state from SQLite
-4. optionally downloads Drive artifacts
-5. uploads artifacts/reports as workflow artifacts
-
-Required GitHub secrets (as applicable):
-
-- `GOOGLE_DRIVE_FOLDER_ID`
-- `GOOGLE_DRIVE_CREDENTIALS_JSON`
-
-## Streamlit Cloud Deployment
-
-Dashboard app: `dashboard/app.py`
-
-The dashboard reads from `artifacts/factory.db` and shows:
-
-- active runs
-- run state
-- telemetry metrics
-- event timeline
-- evaluation results
-
-For hosted environments, mount/sync `artifacts/factory.db` into the app runtime (or sync telemetry/artifacts from Drive before app start).
-
-## Typical Operations
-
-Run one automation cycle:
-
-```bash
-python -m agentic_soc_factory.cli daemon-once --tasks tasks.sample.json --corpus-root secops_rag --db artifacts/factory.db --artifacts-root artifacts --profile default
-```
-
-Run long-lived scheduler:
-
-```bash
-python -m agentic_soc_factory.cli daemon --tasks tasks.sample.json --corpus-root secops_rag --db artifacts/factory.db --artifacts-root artifacts --profile default
-```
-
-Start event API:
-
-```bash
-python -m agentic_soc_factory.cli event-api --db artifacts/factory.db --host 0.0.0.0 --port 8787
-```
+## 📜 License
+BlueForge AI is open-source. See the repository for full license details.
