@@ -1,0 +1,91 @@
+name: BlueForge Command Center (OIDC)
+
+on:
+  workflow_dispatch:
+    inputs:
+      infisical_project_id:
+        description: 'Infisical Project ID'
+        required: true
+      infisical_env:
+        description: 'Infisical Environment (e.g., dev, prod)'
+        required: true
+        default: 'dev'
+      tasks_json_override:
+        description: 'JSON Override for tasks (Optional)'
+        required: false
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  run-swarm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Infisical CLI
+        run: |
+          curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.deb.sh' | sudo -E bash
+          sudo apt-get update && sudo apt-get install -y infisical
+
+      - name: Fetch Secrets from Infisical (OIDC)
+        id: secrets
+        uses: infisical/secrets-action@v1
+        with:
+          client-id: ${{ secrets.INFISICAL_CLIENT_ID }}
+          client-secret: ${{ secrets.INFISICAL_CLIENT_SECRET }}
+          project-id: ${{ github.event.inputs.infisical_project_id }}
+          env-slug: ${{ github.event.inputs.infisical_env }}
+          # Note: In a true OIDC setup, we use machine-identity instead of client-secret
+          # For BYOK multi-tenancy, the user provides their own INFISICAL_CLIENT_ID/SECRET
+          # or we use the Repo-level OIDC trust if they've configured it.
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Prepare Tasks
+        run: |
+          if [ -n "${{ github.event.inputs.tasks_json_override }}" ]; then
+            echo '${{ github.event.inputs.tasks_json_override }}' > tasks.custom.json
+            echo "FACTORY_TASKS_FILE=tasks.custom.json" >> $GITHUB_ENV
+          else
+            echo "FACTORY_TASKS_FILE=tasks.sample.json" >> $GITHUB_ENV
+          fi
+
+      - name: Run BlueForge Swarm
+        env:
+          # Map secrets pulled from Infisical to Env Vars
+          OPENAI_API_KEY: ${{ env.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ env.ANTHROPIC_API_KEY }}
+          GOOGLE_API_KEY: ${{ env.GOOGLE_API_KEY }}
+          GDRIVE_CREDS_B64: ${{ env.GDRIVE_CREDS_B64 }}
+          GOOGLE_DRIVE_FOLDER_ID: ${{ env.GOOGLE_DRIVE_FOLDER_ID }}
+        run: |
+          python -m agentic_soc_factory.cli daemon-once \
+            --tasks "$FACTORY_TASKS_FILE" \
+            --corpus-root secops_rag \
+            --db artifacts/factory.db \
+            --artifacts-root artifacts \
+            --profile default
+
+      - name: Update Telemetry Gist (UI Feedback)
+        if: always()
+        run: |
+          # This utility would push the latest artifacts/factory.db state 
+          # to a status branch or Gist for the React UI to poll.
+          echo "Syncing telemetry to status branch..."
+          git config --global user.name "BlueForge-Bot"
+          git config --global user.email "bot@blueforge.ai"
+          git checkout -b status
+          git add artifacts/factory.db
+          git commit -m "Update telemetry [skip ci]"
+          git push origin status --force
